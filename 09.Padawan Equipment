@@ -1,0 +1,39 @@
+using System;
+
+namespace Padawan_Equipment
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            double amountOfMoney = double.Parse(Console.ReadLine());
+            int students = int.Parse(Console.ReadLine());
+            double priceLighsabers = double.Parse(Console.ReadLine());
+            double priceRobes = double.Parse(Console.ReadLine());
+            double priceBelts = double.Parse(Console.ReadLine());
+
+            double total = (students + Math.Ceiling(students * 0.1)) * priceLighsabers;
+            double resultTotal = students * priceRobes;
+            double priceTotal = 0;
+
+            if (students >= 10)
+            {
+                priceTotal = (students - students / 6) * priceBelts;
+            }
+            else
+            {
+                priceTotal = students * priceBelts;
+            }
+
+            double result = priceTotal + resultTotal + total;
+            if(amountOfMoney - result >= 0)
+            {
+                Console.WriteLine($"The money is enough - it would cost {result:f2}lv.");
+            }
+            else
+            {
+                Console.WriteLine($"Ivan Cho will need {(result - amountOfMoney):f2}lv more.");
+            }
+        }
+    }
+}
