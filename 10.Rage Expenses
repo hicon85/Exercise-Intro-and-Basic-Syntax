@@ -1,0 +1,23 @@
+using System;
+
+namespace Rage_Expenses
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int lostGames = int.Parse(Console.ReadLine());
+            double priceHeadset = double.Parse(Console.ReadLine());
+            double priceMouse = double.Parse(Console.ReadLine());
+            double priceKeyboard = double.Parse(Console.ReadLine());
+            double priceDisplay = double.Parse(Console.ReadLine());
+
+            double money = priceHeadset * (lostGames / 2);
+            money += priceMouse * (lostGames /3);
+            money += priceKeyboard * (lostGames / 6);
+            money += priceDisplay * (lostGames / 12);
+
+            Console.WriteLine($"Rage expenses: {money:f2} lv.");
+        }
+    }
+}
