@@ -1,0 +1,80 @@
+using System;
+
+namespace Vacation
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            double money = double.Parse(Console.ReadLine());
+            string grupa = Console.ReadLine();
+            string day = Console.ReadLine();
+
+            double price = 0;
+
+            if(grupa == "Students")
+            {
+                if(day == "Friday")
+                {
+                    price = 8.45;
+                }
+                else if(day == "Saturday")
+                {
+                    price = 9.80;
+                }
+                else if(day == "Sunday")
+                {
+                    price = 10.46;
+                }
+
+                if(money >= 30)
+                {
+                    price *= 0.85;
+                }
+            }
+            else if(grupa == "Business")
+            {
+                if(day == "Friday")
+                {
+                    price = 10.90;
+                }
+                else if(day == "Saturday")
+                {
+                    price = 15.60;
+                }
+                else if(day == "Sunday")
+                {
+                    price = 16;
+                }
+
+                if(money >= 100)
+                {
+                    price = (price -10) * money;
+                }
+            }
+            else if(grupa == "Regular")
+            {
+                if(day == "Friday")
+                {
+                    price = 15;
+                }
+                else if(day == "Saturday")
+                {
+                    price = 20;
+                }
+                else if(day == "Sunday")
+                {
+                    price = 22.50;
+                }
+
+                if(money > 10 && money <= 20)
+                {
+                    price *= 0.95;
+                }
+            }
+            double result = price * money;
+
+            Console.WriteLine($"Total price: {result:f2}");
+        }
+    }
+}
