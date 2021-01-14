@@ -1,0 +1,41 @@
+using System;
+
+namespace Strong_Number
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int input = int.Parse(Console.ReadLine());
+            int number = input;
+
+            int currentNumber = 0;
+            int facturielSum = 0;
+
+            while (number !=0)
+            {
+                currentNumber = number % 10;
+                number /= 10;
+
+                int facturiel = 1;
+
+                for (int i = 1; i <= currentNumber; i++)
+                {
+                    facturiel *= i;
+                }
+                facturielSum += facturiel;
+            }
+            string result = "";
+
+            if(input == facturielSum)
+            {
+                result = "yes";
+            }
+            else
+            {
+                result = "no";
+            }
+            Console.WriteLine(result);
+        }
+    }
+}
